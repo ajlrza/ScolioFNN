@@ -1,7 +1,7 @@
 # ScolioFNN
 
 ## Overview
-ScolioFNN is a custom Artificial Neural Network implementation built using PyTorch. It is designed to handle custom feedforward logic, manual feature extraction, and iterative weight updates. The project overrides standard PyTorch `nn.Module` behaviors to provide granular control over backpropagation, weight initialization, and the training loop directly within the model class.
+ScolioFNN is a custom Artificial Neural Network implementation built using PyTorch for Medical Data on Scoliosis. It is designed to handle custom feedforward logic, manual feature extraction, and iterative weight updates. The project overrides standard PyTorch `nn.Module` behaviors to provide granular control over backpropagation, weight initialization, and the training loop directly within the model class.
 
 ## Requirements
 To run this model, ensure you have the following installed:
