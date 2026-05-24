@@ -10,7 +10,7 @@ To run this model, ensure you have the following installed:
 
 ## Architecture & Methods
 
-The core of ScolioFNN is built inside the `Model` class, inheriting from `torch.nn.Module`. 
+The core of ScolioFNN is built inside the `Net` class, inheriting from `torch.nn.Module`. 
 
 ### Key Methods:
 * `__init__(self, x, y)`: Initializes the model with input tensors (`x`) and target tensors (`y`).
