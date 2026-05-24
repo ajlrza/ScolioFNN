@@ -24,7 +24,7 @@ The core of ScolioFNN is built inside the `Net` class, inheriting from `torch.nn
 
 ```python
 import torch
-from your_module import Model
+from model import Net
 
 # Prepare your data
 params = [1.0]
@@ -32,7 +32,7 @@ x = torch.tensor(params)
 y = torch.tensor([0.0]) # Target tensor
 
 # Initialize the model
-tst = Model(x, y)
+model = Net(x, y)
 
 # Train the model (Example: 5 epochs)
-tst.trainModel(epoch_num=5)
+model.trainModel(epoch_num=5)
