@@ -19,7 +19,7 @@ class Net(nn.Module):
         print(self)
 
     # Feed X into Input Layer
-    def passFeatures(self, learn_x: torch.tensor):
+    def pass_features(self, learn_x: torch.tensor):
         self.x_features = []
         
         if (type(learn_x) != torch.tensor):
@@ -34,7 +34,7 @@ class Net(nn.Module):
 
 
     # Backpropagation Algorithm
-    def backpropCompute(self, learn_x: torch.tensor, target_y: torch.tensor):
+    def backprop_compute(self, learn_x: torch.tensor, target_y: torch.tensor):
         self.learn_x = learn_x
         self.target_y = target_y
         
@@ -42,7 +42,7 @@ class Net(nn.Module):
         return backpropComputation
     
     # Updating weights in every iteration
-    def updateWeights(self, new_x: torch.tensor):
+    def update_weights(self, new_x: torch.tensor):
         # Weights corresponding to each tensor
         self.weights = self.initial_weight
 
@@ -54,11 +54,11 @@ class Net(nn.Module):
         return self.loss    
         
     # View parameters
-    def printParams(self):
+    def print_params(self):
         print(self.params)
         
     # Train the model method
-    def trainModel(self, epoch_num):
+    def train_model(self, epoch_num):
         
         # Initialize the training epochs
         self.epochs = epoch_num
@@ -67,12 +67,12 @@ class Net(nn.Module):
         self.output = None
 
         # Create the neurons of the model
-        self.neuronList = []
+        self.neuron_list = []
 
         # Algorithm for determining in and output features in nn.Linear
-        in_features = self.neurons[]
+        self.in_features = self.neurons[]
 
-        self.neuronLinear = nn.Linear(20, 30, bias=True)
+        self.linear_neuron = nn.Linear(20, 30, bias=True)
 
         if (len(self.input_x) != neuronLinear.size()):
             raise Exception(f"Size of input x must be same as {neuronLinear.size()}")
@@ -88,8 +88,8 @@ class Net(nn.Module):
             self.output = f.relu(torch.tensor(self.neuronList))
             self.neuronList.append(self.output)
 
-            self.compute = backpropCompute(self.output)
-            self.loss = updateWeights(self.compute)
+            self.compute = backprop_compute(self.output)
+            self.loss = update_weights(self.compute)
             
             print(f"Training loss: {self.loss}")
             print(self.compute)
