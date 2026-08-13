@@ -7,16 +7,14 @@ class Net(nn.Module):
         self.target_y = torch.tensor(y)
 
     # Forward pass function in every iteration
-    def forward(self, learn_x: torch.tensor, target_y: torch.tenso):
+    def forward(self, learn_x: torch.tensor, target_y: torch.tensor) -> None:
         self.learn_x = learn_x
         self.target_y = target_y
         
         self.weight_initialize = nn.init.kaiming_normal_(self.learn_x.weight, mode="fan_in", nonlinearity='relu')
         self.initial_weight = nn.ParameterList([self.weight_initialize])
         
-        self.updatingWeight = 
-
-        print(self)
+        return self.initial_weight
 
     # Feed X into Input Layer
     def pass_features(self, learn_x: torch.tensor):
@@ -38,8 +36,8 @@ class Net(nn.Module):
         self.learn_x = learn_x
         self.target_y = target_y
         
-        backpropComputation = torch.autograd.grad(self.target_y, self.target_x)
-        return backpropComputation
+        backprop = torch.autograd.grad(self.target_y, self.target_x)
+        return backprop
     
     # Updating weights in every iteration
     def update_weights(self, new_x: torch.tensor):
@@ -79,14 +77,14 @@ class Net(nn.Module):
 
         # Apply linear transformations
         for i in range(self.neurons):
-            self.applyLinear = self.neuronLinear(self.input_x)
-            self.neuronList.append(self.applyLinear)
+            self.apply_linear = self.neuron_linear(self.input_x)
+            self.neuron_list.append(self.apply_linear)
 
         # Apply non-linear functions and train
         for i in range(self.epochs):
             
-            self.output = f.relu(torch.tensor(self.neuronList))
-            self.neuronList.append(self.output)
+            self.output = f.relu(torch.tensor(self.neuron_list))
+            self.neuron_list.append(self.output)
 
             self.compute = backprop_compute(self.output)
             self.loss = update_weights(self.compute)
